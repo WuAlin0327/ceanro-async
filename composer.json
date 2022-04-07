@@ -1,0 +1,22 @@
+{
+    "name": "ceanro/ceanro-core",
+    "description": "Swoole Ceanro Project",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [],
+    "authors": [
+        {
+            "name": "wualin",
+            "email": "wualin@gmail.com",
+            "role": "wualin"
+        }
+    ],
+    "require": {
+        "php": ">=7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ceanro\\": "src/"
+        }
+    }
+}
