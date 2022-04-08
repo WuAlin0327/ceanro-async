@@ -67,7 +67,6 @@ class App
      */
     public static function exec($dispatch, $config){
         $request = \Ceanro\Request::instance();
-        list($path,$var) = Router::parseUrlPath($request->server['path_info']);
         $object = Loader::controller($dispatch['module'],$dispatch['controller']);
         $action = $dispatch['action'] ?: 'index';
         if(!method_exists($object,$action)){

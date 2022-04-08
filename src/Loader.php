@@ -45,8 +45,9 @@ class Loader
         $class = $class . (\Ceanro\App::$suffix || $appendSuffix ? ucfirst($layer) : '');
         $path  = $array ? implode('\\', $array) . '\\' : '';
         $controllers = Config::get('controller_folder');
-        return \Ceanro\App::$namespace . '\\' .
-            ($module ? $module . '\\' : '') . $controllers . '\\' .
+        $multi = Config::get('app_multi_module') ? 'Http' : '';
+        return \Ceanro\App::$namespace . '\\' . ($multi ? $multi .'\\' : '') .
+            ($module ? ucfirst($module) . '\\' : '') . $controllers . '\\' .
             ($layer ? $layer . '\\' : '')  . $path . $class;
     }
 
