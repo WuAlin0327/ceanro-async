@@ -56,7 +56,7 @@ class Request
         return self::$instance;
     }
 
-    public function query(){
+    public function query($name = ''){
         if(!self::$query){
             $queryParams = [];
             if($this->get){
@@ -67,7 +67,7 @@ class Request
             }
             self::$query = $queryParams;
         }
-        return self::$query;
+		return ($name && isset(self::$query[$name])) ? self::$query[$name] : self::$query;
     }
 
     public function module($module = null){
